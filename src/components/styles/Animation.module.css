@@ -1,0 +1,76 @@
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animated-bounce {
+  animation: bounce 0.5s infinite;
+}
+.box {
+  position: relative;
+  height: 300px;
+  width: 200px;
+  transform-style: preserve-3d;
+  animation: animate 35s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: perspective(1500px) rotateY(0deg);
+  }
+  0% {
+    transform: perspective(1500px) rotateY(360deg);
+  }
+}
+.box div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--v) * 27.5deg)) translateZ(500px);
+  -webkit-box-reflect: below 0px
+    linear-gradient(transparent, transparent, #0005);
+}
+/* .box div Image {
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+} */
+.box div:hover {
+  width: 120%;
+  height: 120%;
+}
+
+.spin {
+  animation: animate 1.4s linear infinite;
+}
+@keyframes spin {
+  0% {
+    filter: hue-rotate(0deg);
+    transform: perspective(1500px) rotateY(0deg);
+  }
+  0% {
+    filter: hue-rotate(360deg);
+    transform: perspective(1500px) rotateY(360deg);
+  }
+}
+@keyframes conrotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.conrotate {
+  animation: conrotate 5s linear infinite;
+}
